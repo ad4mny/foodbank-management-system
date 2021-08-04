@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends CI_Controller
+class AboutController extends CI_Controller
 {
     public function __construct()
     {
@@ -11,7 +11,7 @@ class IndexController extends CI_Controller
     {
         $this->load->view('templates/Header');
         $this->load->view('templates/Nav');
-        $this->load->view('Index');
+        $this->load->view('About');
         $this->load->view('templates/Footer');
     }
 }
