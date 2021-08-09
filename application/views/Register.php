@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row d-flex justify-content-center mt-5 pt-5">
+    <div class="row d-flex justify-content-center my-5 py-5">
         <div class="col-4">
             <div class=" rounded-3 bg-white shadow-lg p-5">
                 <form method="post" action="<?php echo base_url(); ?>register/new">

@@ -1,5 +1,5 @@
-<div class="text-center pt-5">
-    <h1 class="text-white display-4">Foodbank</h1>
+<div class="text-center pt-3">
+    <h1 class="text-white display-4 mb-0">Foodbank</h1>
 </div>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-transparent">
@@ -12,19 +12,25 @@
                 <a href="<?php echo base_url(); ?>" class="nav-link <?php if ($this->uri->segment(1) == '') echo 'active border-bottom'; ?>">Home</a>
             </li>
             <li class="nav-item ">
-                <a href="<?php echo base_url(); ?>bank" class="nav-link <?php if ($this->uri->segment(1) == 'bank') echo 'active border-bottom'; ?>">Bank</a>
-            </li>
-            <li class="nav-item ">
-                <a href="<?php echo base_url(); ?>location" class="nav-link <?php if ($this->uri->segment(1) == 'location') echo 'active border-bottom'; ?>">Location</a>
+                <a href="<?php echo base_url(); ?>foodbank" class="nav-link <?php if ($this->uri->segment(1) == 'foodbank') echo 'active border-bottom'; ?>">Foodbank</a>
             </li>
             <li class="nav-item ">
                 <a href="<?php echo base_url(); ?>about" class="nav-link <?php if ($this->uri->segment(1) == 'about') echo 'active border-bottom'; ?>">About Us</a>
             </li>
-            <li class="nav-item ">
-                <a href="<?php echo base_url(); ?>login" class="nav-link <?php if ($this->uri->segment(1) == 'login') echo 'active border-bottom'; ?>">Login</a>
-            </li>
-        </ul>
 
+            <?php if (isset($_SESSION['id'])) { ?>
+                <li class="nav-item ">
+                    <a href="<?php echo base_url(); ?>history" class="nav-link <?php if ($this->uri->segment(1) == 'location') echo 'active border-bottom'; ?>">History</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="<?php echo base_url(); ?>logout" class="nav-link <?php if ($this->uri->segment(1) == 'login') echo 'active border-bottom'; ?>">Logout</a>
+                </li>
+            <?php } else { ?>
+                <li class="nav-item ">
+                    <a href="<?php echo base_url(); ?>login" class="nav-link <?php if ($this->uri->segment(1) == 'login') echo 'active border-bottom'; ?>">Login</a>
+                </li>
+            <?php } ?>
+        </ul>
     </div>
 </nav>
 
