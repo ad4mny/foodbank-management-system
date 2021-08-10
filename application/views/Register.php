@@ -1,7 +1,7 @@
-<div class="container">
-    <div class="row d-flex justify-content-center my-5 py-5">
+<div class="container pt-2">
+    <div class="row d-flex justify-content-center">
         <div class="col-4">
-            <div class=" rounded-3 bg-white shadow-lg p-5">
+            <div class="bg-white shadow-lg p-5">
                 <form method="post" action="<?php echo base_url(); ?>register/new">
                     <div class="form-group pb-2 text-center">
                         <h3 class="fw-bold">Create new account.</h3>
@@ -23,7 +23,7 @@
                     </div>
                     <hr>
                     <div class="form-group pb-2 text-center">
-                        <button type="submit" class="form-control btn btn-success" name="submit">Create Account</button>
+                        <button type="submit" class="form-control btn btn-success rounded-0" name="submit">Create Account</button>
                     </div>
                 </form>
             </div>

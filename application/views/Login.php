@@ -1,7 +1,7 @@
-<div class="container">
-    <div class="row d-flex justify-content-center my-5 py-5">
+<div class="container pt-2">
+    <div class="row d-flex justify-content-center ">
         <div class="col-4">
-            <div class=" rounded-3 bg-white shadow-lg p-5">
+            <div class="bg-white shadow-lg p-5">
                 <form method="post" action="<?php echo base_url(); ?>login/verify">
                     <div class="form-group pb-2 text-center">
                         <h3 class="fw-bold">Login</h3>
@@ -17,10 +17,13 @@
                     </div>
                     <hr>
                     <div class="form-group pb-2 text-center">
-                        <button type="submit" class="form-control btn btn-primary" name="submit">Login</button>
+                        <button type="submit" class="form-control btn btn-primary rounded-0" name="submit">Login</button>
                     </div>
                     <div class="form-group pb-2 text-center">
-                        <a href="<?php echo base_url(); ?>register" class="form-control btn btn-success">Register</a>
+                        <a href="<?php echo base_url(); ?>guest" class="form-control btn btn-secondary rounded-0">Continue as Guest</a>
+                    </div>
+                    <div class="form-group pb-2 text-center">
+                        <a href="<?php echo base_url(); ?>register" class="form-control btn btn-success rounded-0">Register</a>
                     </div>
                 </form>
             </div>

@@ -15,10 +15,10 @@
                             <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
                             <div class="card-text text-muted fw-light">Foodbank location at <?php echo $row['item_location']; ?>. </div>
                             <div class="card-text text-end pt-2"> <?php echo $row['item_quantity']; ?> unit(s) left.</div>
-                            <div class="card-text text-end text-muted fst-italic fw-light"><small>Last Updated at <?php echo $row['item_last_updated']; ?></small></div>
+                            <div class="card-text text-end text-muted fst-italic fw-light"><small>Last Updated at <?php echo $row['datetime']; ?></small></div>
                         </div>
                         <?php if (!isset($_SESSION['bags'][$row['item_id']])) { ?>
-                            <a href="<?php echo base_url(); ?>checkout/add/<?php echo $row['item_id']; ?>" class="btn btn-primary rounded-0">
+                            <a href="<?php echo base_url(); ?>foodbank/take/<?php echo $row['item_id']; ?>" class="btn btn-primary rounded-0">
                                 <span>Take</span>
                             </a>
                         <?php } else if ($row['item_quantity'] === 0) { ?>
