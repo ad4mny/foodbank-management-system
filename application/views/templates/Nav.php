@@ -1,5 +1,6 @@
+<div class="bg-dark">
 <div class="text-center pt-3">
-    <h1 class="text-white display-4 mb-0">Foodbank</h1>
+    <h1 class="text-white fw-lighter mb-0">UGiving Foodbank</h1>
 </div>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-transparent">
@@ -20,7 +21,7 @@
 
             <?php if (isset($_SESSION['id'])) { ?>
                 <li class="nav-item ">
-                    <a href="<?php echo base_url(); ?>history" class="nav-link <?php if ($this->uri->segment(1) == 'location') echo 'active border-bottom'; ?>">History</a>
+                    <a href="<?php echo base_url(); ?>history" class="nav-link <?php if ($this->uri->segment(1) == 'history') echo 'active border-bottom'; ?>">History</a>
                 </li>
                 <li class="nav-item ">
                     <a href="<?php echo base_url(); ?>logout" class="nav-link <?php if ($this->uri->segment(1) == 'login') echo 'active border-bottom'; ?>">Logout</a>
@@ -33,6 +34,7 @@
         </ul>
     </div>
 </nav>
+</div>
 
 <!-- Alerts -->
 <div id="alert" class="w-75 position-absolute start-50 translate-middle mt-5" style="z-index: 1100; top: 10%;">

@@ -1,4 +1,4 @@
-<div class="container pt-2">
+<div class="container p-5">
     <div class="row d-flex justify-content-center">
         <div class="col-4">
             <div class="bg-white shadow-lg p-5">

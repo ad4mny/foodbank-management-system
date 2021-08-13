@@ -1,6 +1,6 @@
 <?php
 
-class BankModel extends CI_Model
+class FoodbankModel extends CI_Model
 {
     public function getFoodbank()
     {

@@ -12,8 +12,8 @@ $route['logout'] = 'LoginController/logout';
 $route['register'] = 'RegisterController/index';
 $route['register/new'] = 'RegisterController/register_new_user';
 
-$route['foodbank'] = 'BankController/index';
-$route['foodbank/take/(:any)'] = 'BankController/addFoodbankItem/$1';
+$route['foodbank'] = 'FoodbankController/index';
+$route['foodbank/take/(:any)'] = 'FoodbankController/addFoodbankItem/$1';
 $route['about'] = 'AboutController/index';
 $route['history'] = 'HistoryController/index';
 

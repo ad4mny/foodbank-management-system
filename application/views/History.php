@@ -1,7 +1,12 @@
-<div class="container pt-2 pb-5">
+<div class="container p-5">
+    <div class="row">
+        <div class="col">
+            <h3>History</h3>
+        </div>
+    </div>
     <?php if (isset($history) && is_array($history)) {
         foreach ($history as $row) { ?>
-            <div class="row bg-white my-2 py-2">
+            <div class="row bg-white my-2 py-2 shadow">
                 <div class="col-2">
                     <?php
                     if ($row['item_image'] != null) {
