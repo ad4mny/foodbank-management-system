@@ -18,3 +18,12 @@ $route['about'] = 'AboutController/index';
 $route['history'] = 'HistoryController/index';
 
 
+$route['admin/(:any)'] = 'AdminController/index/$1';
+$route['admin/login/submit'] = 'AdminController/loginUser';
+
+$route['admin/foodbank/add'] = 'AdminController/index/add';
+$route['admin/foodbank/update/(:num)'] = 'AdminController/index/update/$1';
+$route['admin/foodbank/delete/(:num)'] = 'AdminController/deleteItem/$1';
+
+$route['admin/foodbank/add/submit'] = 'AdminController/addItem';
+$route['admin/foodbank/update/submit'] = 'AdminController/updateItem';

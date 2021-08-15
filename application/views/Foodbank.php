@@ -4,7 +4,7 @@
             <h3>Available Items</h3>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4 text-dark" id="display_area">
+    <div class="row row-cols-1 row-cols-md-4 g-4 text-dark">
         <?php if (isset($foodbank) && is_array($foodbank)) {
             foreach ($foodbank as $row) { ?>
                 <div class="col d-flex">

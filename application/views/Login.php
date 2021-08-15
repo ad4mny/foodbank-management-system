@@ -20,9 +20,6 @@
                         <button type="submit" class="form-control btn btn-primary rounded-0" name="submit">Login</button>
                     </div>
                     <div class="form-group pb-2 text-center">
-                        <a href="<?php echo base_url(); ?>guest" class="form-control btn btn-secondary rounded-0">Continue as Guest</a>
-                    </div>
-                    <div class="form-group pb-2 text-center">
                         <a href="<?php echo base_url(); ?>register" class="form-control btn btn-success rounded-0">Register</a>
                     </div>
                 </form>
