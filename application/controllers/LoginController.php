@@ -16,21 +16,22 @@ class LoginController extends CI_Controller
         $this->load->view('templates/Footer');
     }
 
-    public function loginUser() {
+    public function loginUser()
+    {
         $username = $this->input->post('username');
         $password = md5($this->input->post('password'));
 
         $return = $this->LoginModel->loginUser($username, $password);
 
-        if ($return !== NULL || $return !== false) {
+        if (isset($return) && $return !== false) {
 
             $this->session->set_userdata('id', $return['user_id']);
             $this->session->set_userdata('name', $return['full_name']);
             $this->session->set_userdata('role', $return['role']);
 
             switch ($this->session->userdata('role')) {
-                case 2:
-                    redirect(base_url() . 'admin/dashboard');
+                case 1:
+                    redirect(base_url() . 'admin/foodbank');
                     break;
                 default:
                     redirect(base_url());
@@ -55,5 +56,4 @@ class LoginController extends CI_Controller
 
         redirect(base_url());
     }
-
 }
