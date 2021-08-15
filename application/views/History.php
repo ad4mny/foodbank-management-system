@@ -1,7 +1,7 @@
 <div class="container p-5">
     <div class="row">
         <div class="col">
-            <h3>History</h3>
+            <h3 class="text-white">History</h3>
         </div>
     </div>
     <?php if (isset($history) && is_array($history)) {

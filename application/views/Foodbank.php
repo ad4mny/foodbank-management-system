@@ -1,7 +1,7 @@
 <div class="container p-5">
     <div class="row">
         <div class="col">
-            <h3>Available Items</h3>
+            <h3 class="text-white">Available Items</h3>
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-4 g-4 text-dark">

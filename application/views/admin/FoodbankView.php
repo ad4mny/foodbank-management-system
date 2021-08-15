@@ -1,10 +1,10 @@
 <div class="col">
     <div class="row mb-2 border-bottom">
         <div class="col">
-            <h1>Foodbank Item List</h1>
+            <h1 class="text-white">Foodbank Item List</h1>
         </div>
         <div class="col m-auto text-end">
-            <a href="<?php echo base_url(); ?>admin/foodbank/add" class="btn btn-outline-primary rounded-0">
+            <a href="<?php echo base_url(); ?>admin/foodbank/add" class="btn btn-outline-light rounded-0">
                 <span>Add Item</span>
             </a>
         </div>
