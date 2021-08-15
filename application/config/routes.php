@@ -14,9 +14,9 @@ $route['register/new'] = 'RegisterController/register_new_user';
 
 $route['foodbank'] = 'FoodbankController/index';
 $route['foodbank/take/(:any)'] = 'FoodbankController/addFoodbankItem/$1';
+$route['donation'] = 'DonationController/index';
 $route['about'] = 'AboutController/index';
 $route['history'] = 'HistoryController/index';
-
 
 $route['admin/(:any)'] = 'AdminController/index/$1';
 $route['admin/login/submit'] = 'AdminController/loginUser';

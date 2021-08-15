@@ -22,6 +22,9 @@
                     <div class="form-group pb-2 text-center">
                         <a href="<?php echo base_url(); ?>register" class="form-control btn btn-success rounded-0">Register</a>
                     </div>
+                    <div class="form-group pb-2 text-center">
+                        <small><a href="<?php echo base_url(); ?>admin/login" class="text-muted">Management</a></small>
+                    </div>
                 </form>
             </div>
         </div>
