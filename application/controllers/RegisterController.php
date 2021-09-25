@@ -16,7 +16,7 @@ class RegisterController extends CI_Controller
         $this->load->view('templates/Footer');
     }
 
-    public function register_new_user()
+    public function registerUser()
     {
         $name = $this->input->post('name');
         $id = $this->input->post('id');
@@ -35,6 +35,25 @@ class RegisterController extends CI_Controller
                 $this->session->set_tempdata('error', 'Registration failed, please register again.', 1);
                 redirect(base_url() . 'register');
             }
+        }
+    }
+
+    // API 
+    public function registerUserAPI()
+    {
+        $name = $this->input->post('name');
+        $card = $this->input->post('card');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $return = $this->RegisterModel->register_new_user($name, $card, $username, $password);
+        
+        if ($return === true) {
+            echo json_encode($return);
+            exit;
+        } else {
+            echo json_encode(false);
+            exit;
         }
     }
 }

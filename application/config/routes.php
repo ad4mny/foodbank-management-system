@@ -10,7 +10,7 @@ $route['login/verify'] = 'LoginController/loginUser';
 $route['logout'] = 'LoginController/logout';
 
 $route['register'] = 'RegisterController/index';
-$route['register/new'] = 'RegisterController/register_new_user';
+$route['register/new'] = 'RegisterController/registerUser';
 
 $route['foodbank'] = 'FoodbankController/index';
 $route['foodbank/take/(:any)'] = 'FoodbankController/addFoodbankItem/$1';
@@ -27,3 +27,13 @@ $route['admin/foodbank/delete/(:num)'] = 'AdminController/deleteItem/$1';
 
 $route['admin/foodbank/add/submit'] = 'AdminController/addItem';
 $route['admin/foodbank/update/submit'] = 'AdminController/updateItem';
+
+// API 
+$route['api/get_login'] = 'LoginController/loginUserAPI';
+$route['api/get_signup'] = 'RegisterController/registerUserAPI';
+$route['api/get_foodbank'] = 'FoodbankController/getFoodbankAPI';
+$route['api/get_history'] = 'HistoryController/getHistoryAPI';
+$route['api/set_taken'] = 'HistoryController/setItemTakenAPI';
+$route['api/set_take_item'] = 'FoodbankController/addFoodbankItemAPI';
+$route['api/set_remove_item'] = 'FoodbankController/removeFoodbankItemAPI';
+$route['api/get_donation'] = 'DonationController/getFoodbankAPI';

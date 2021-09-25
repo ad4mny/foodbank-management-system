@@ -21,9 +21,7 @@ class DonationController extends CI_Controller
     public function getFoodbank()
     {
         $data = $this->FoodbankModel->getFoodbank();
-        // echo '<pre/>';
-        // var_dump($data);
-        // exit;
+
         $item_id = '[';
         $item_quantity = '[';
         $item_name = '[';
@@ -43,6 +41,30 @@ class DonationController extends CI_Controller
         $return = array(
             $item_id, $item_quantity, $item_name
         );
+
         return $return;
+    }
+
+    // API 
+    public function getFoodbankAPI()
+    {
+        $data = $this->FoodbankModel->getFoodbank();
+
+        $item_quantity = [];
+        $item_name = [];
+
+        if (isset($data) && is_array($data)) {
+            foreach ($data as $row) {
+                array_push($item_quantity, (int)$row['item_quantity']);
+                array_push($item_name, $row['item_name']);
+            }
+        }
+
+        $return = array(
+            $item_quantity, $item_name
+        );
+
+        echo json_encode($return);
+        exit;
     }
 }

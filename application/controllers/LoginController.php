@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 class LoginController extends CI_Controller
 {
@@ -55,5 +56,22 @@ class LoginController extends CI_Controller
         $this->session->unset_userdata($session_data);
 
         redirect(base_url());
+    }
+
+    // API 
+    public function loginUserAPI()
+    {
+        $username = $this->input->post('username');
+        $password = md5($this->input->post('password'));
+
+        $return = $this->LoginModel->loginUser($username, $password);
+
+        if (isset($return) && $return !== false) {
+            echo json_encode($return);
+            exit;
+        } else {
+            echo json_encode(false);
+            exit;
+        }
     }
 }

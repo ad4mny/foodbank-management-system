@@ -14,6 +14,7 @@ class FoodbankModel extends CI_Model
         $data = array(
             'foodbank_item_id' => $item_id,
             'foodbank_user_id' => $_SESSION['id'],
+            'item_status' => 'Not yet taken',
             'datetime' => date('H:ia d/m/Y')
         );
 
@@ -22,6 +23,26 @@ class FoodbankModel extends CI_Model
         } else {
             return false;
         }
+    }
+
+    public function removeFoodbankItem($history_id)
+    {
+        $this->db->select('*');
+        $this->db->from('history');
+        $this->db->join('foodbank', 'foodbank_item_id = item_id');
+        $this->db->where('id', $history_id);
+        $result = $this->db->get()->row_array();
+
+        $data = array(
+            'item_quantity' => ($result['item_quantity'] + 1),
+            'datetime' => date('H:ia d/m/Y')
+        );
+
+        $this->db->where('item_id', $result['item_id']);
+        $this->db->update('foodbank', $data);
+
+        $this->db->where('id', $history_id);
+        return $this->db->delete('history');
     }
 
     public function updateFoodbankQuantity($item_id)
@@ -36,7 +57,7 @@ class FoodbankModel extends CI_Model
             'item_quantity' => ($data['item_quantity'] - 1),
             'datetime' => date('H:ia d/m/Y')
         );
-        
+
         $this->db->where('item_id', $item_id);
         return $this->db->update('foodbank', $data);
     }
