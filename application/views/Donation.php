@@ -1,31 +1,42 @@
 <div class="container p-5">
     <div class="row">
         <div class="col">
-            <h3 class="text-white">Current Donation Status</h3>
+            <h3 class="text-white">Daily Donation Status</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col text-dark">
-            <div id='myChart' class="d-block vh-100 w-100 bg-light"></div>
-            <?php if (isset($donation) && is_array($donation)) {
-            ?>
+            <div id='myChart' class="d-block vh-100 w-100"></div>
+            <?php if (isset($donation)) { ?>
                 <script>
                     var myConfig = {
-                        "type": "bar",
-                        "scaleX": {
-                            "labels": <?php echo $donation[2]; ?>
+                        title: {
+                            text: "Total Availability of Foodbank"
                         },
-                        "series": [{
-                            "values": <?php echo $donation[1]; ?>
-                        }]
+                        "type": "pie",
+                        plot: {
+                            borderColor: "#2B313B",
+                            borderWidth: 5,
+                            // slice: 90,
+                            valueBox: {
+                                placement: 'out',
+                                text: '%t\n%npv%',
+                                fontFamily: "Open Sans"
+                            },
+                            tooltip: {
+                                fontSize: '18',
+                                fontFamily: "Open Sans",
+                                padding: "5 10",
+                                text: "%npv%"
+                            }
+                        },
+                        "series": <?php echo $donation; ?>
                     };
 
                     zingchart.render({
                         id: 'myChart',
-                        data: myConfig,
-                        height: '100%',
-                        width: '100%'
+                        data: myConfig
                     });
                 </script>
             <?php } ?>

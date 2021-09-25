@@ -22,27 +22,17 @@ class DonationController extends CI_Controller
     {
         $data = $this->FoodbankModel->getFoodbank();
 
-        $item_id = '[';
-        $item_quantity = '[';
-        $item_name = '[';
+        $value = "[";
 
         if (isset($data) && is_array($data)) {
             foreach ($data as $row) {
-                $item_id .= $row['item_id'] . ',';
-                $item_quantity .= $row['item_quantity'] . ',';
-                $item_name .= '\'' . $row['item_name'] . '\',';
+
+                $value .= '{values: [' . (int)$row['item_quantity'] . '],text: "' . $row['item_name'] . '"},';
             }
         }
+        $value .= "]";
 
-        $item_id .= ']';
-        $item_quantity .= ']';
-        $item_name .= ']';
-
-        $return = array(
-            $item_id, $item_quantity, $item_name
-        );
-
-        return $return;
+        return $value;
     }
 
     // API 
