@@ -11,7 +11,7 @@
                     <div class="card h-100 rounded-0 border-0 shadow">
                         <?php
                         if ($row['item_image'] != null) {
-                            echo '<img class="card-img-top" src="' . base_url() . 'assets/catalog/' . $row['item_image'] . '" alt="No Image">';
+                            echo '<img class="card-img-top" src="' . base_url() . 'assets/image/' . $row['item_image'] . '" alt="No Image">';
                         } else {
                             echo '<img class="card-img-top" src="https://dummyimage.com/640x360/f0f0f0/aaa" alt="No Image">';
                         }

@@ -4,7 +4,7 @@
             <h1 class="text-white">Add Item List</h1>
         </div>
     </div>
-    <form method="post" action="<?php echo base_url(); ?>admin/foodbank/add/submit">
+    <form method="post" action="<?php echo base_url(); ?>admin/foodbank/add/submit" enctype="multipart/form-data">
         <div class="row">
 
             <div class="col-6 ">

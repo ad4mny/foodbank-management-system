@@ -6,7 +6,7 @@
     </div>
     <?php if (isset($item) && is_array($item)) {
         foreach ($item as $row) { ?>
-            <form method="post" action="<?php echo base_url(); ?>admin/foodbank/update/submit">
+            <form method="post" action="<?php echo base_url(); ?>admin/foodbank/update/submit" enctype="multipart/form-data">
 
                 <div class="row">
                     <div class="col-6">

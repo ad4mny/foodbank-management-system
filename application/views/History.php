@@ -10,7 +10,7 @@
                 <div class="col-2">
                     <?php
                     if ($row['item_image'] != null) {
-                        echo '<img class="card-img-top" src="' . base_url() . 'assets/catalog/' . $row['item_image'] . '" alt="No Image">';
+                        echo '<img class="card-img-top" src="' . base_url() . 'assets/image/' . $row['item_image'] . '" alt="No Image">';
                     } else {
                         echo '<img class="card-img-top" src="https://dummyimage.com/640x360/f0f0f0/aaa" alt="No Image">';
                     }
@@ -19,6 +19,7 @@
                 <div class="col">
                     <h5 class="mb-0"><?php echo $row['item_name']; ?></h5>
                     <div class="card-text text-muted fw-light">Foodbank location at <?php echo $row['item_location']; ?>. </div>
+                    <small>Please claim the stated item at the desired location using the mobile apps.</small>
                 </div>
             </div>
     <?php }
