@@ -33,9 +33,8 @@ class HistoryController extends CI_Controller
 
     public function setItemTakenAPI()
     {
-        $user_id = $this->input->post('user_id');
-        $item_id = $this->input->post('item_id');
-        echo json_encode($this->HistoryModel->setItemTaken($user_id, $item_id));
+        $history_id = $this->input->post('history_id');
+        echo json_encode($this->HistoryModel->setItemTaken($history_id));
         exit;
     }
 }

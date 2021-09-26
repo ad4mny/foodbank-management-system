@@ -12,15 +12,14 @@ class HistoryModel extends CI_Model
         return $this->db->get()->result_array();
     }
 
-    public function setItemTaken($item_id, $user_id)
+    public function setItemTaken($history_id)
     {
         $data = array(
-            'foodbank_user_id' => $user_id,
-            'foodbank_item_id' => $item_id,
             'item_status' => 'Taken successfully',
             'datetime' => date('H:ia Y/m/d')
         );
-
-        return $this->db->insert('history', $data);
+        
+        $this->db->where('id', $history_id);
+        return $this->db->update('history', $data);
     }
 }
