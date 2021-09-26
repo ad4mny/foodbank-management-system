@@ -1,7 +1,7 @@
 <div class="container">
 
     <!-- Alerts -->
-    <div id="alert" class="w-50 position-absolute m-5">
+    <div id="alert" class="w-50 position-absolute m-5" style="z-index: 1100 !important;">
         <?php
         if ($this->session->tempdata('notice') != NULL) {
             echo '<div class="alert alert-success border-0 shadow alert-dismissible fade show" role="alert">';
@@ -23,7 +23,6 @@
         <div class="col-3">
             <div class="list-group bg-white shadow">
                 <a href="<?php echo base_url(); ?>admin/foodbank" class="list-group-item list-group-item-action <?php if ($this->uri->segment(2) == 'foodbank') echo 'active'; ?>">Manage Foodbank</a>
-                <a href="<?php echo base_url(); ?>admin/analytic" class="list-group-item list-group-item-action <?php if ($this->uri->segment(2) == 'analytic') echo 'active'; ?>">Manage Analytics</a>
                 <a href="<?php echo base_url(); ?>logout" class="list-group-item list-group-item-action text-danger">Logout</a>
             </div>
         </div>

@@ -18,9 +18,6 @@
             <li class="nav-item ">
                 <a href="<?php echo base_url(); ?>donation" class="nav-link <?php if ($this->uri->segment(1) == 'donation') echo 'active border-bottom'; ?>">Donation</a>
             </li>
-            <li class="nav-item ">
-                <a href="<?php echo base_url(); ?>about" class="nav-link <?php if ($this->uri->segment(1) == 'about') echo 'active border-bottom'; ?>">About Us</a>
-            </li>
             <?php if (isset($_SESSION['id'])) { ?>
                 <li class="nav-item ">
                     <a href="<?php echo base_url(); ?>history" class="nav-link <?php if ($this->uri->segment(1) == 'history') echo 'active border-bottom'; ?>">History</a>
