@@ -9,7 +9,7 @@ class RegisterModel extends CI_Model
             'card_id' => $id,
             'username' => $username,
             'password' => $password,
-            'role' => 1
+            'role' => 0
         );
 
         return $this->db->insert('userdata', $data);

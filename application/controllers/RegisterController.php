@@ -29,7 +29,7 @@ class RegisterController extends CI_Controller
             $this->session->set_tempdata('error', 'Password not match, please register again.', 1);
             redirect(base_url() . 'register');
         } else {
-            if ($this->RegisterModel->register_new_user($name, $id, $username, $password) === true) {
+            if ($this->RegisterModel->register_new_user($name, $id, $username, md5($password)) === true) {
                 $this->session->set_tempdata('notice', 'Account has been created successfully, please proceed login.', 1);
                 redirect(base_url() . 'login');
             } else {
@@ -47,7 +47,7 @@ class RegisterController extends CI_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $return = $this->RegisterModel->register_new_user($name, $card, $username, $password);
+        $return = $this->RegisterModel->register_new_user($name, $card, $username, md5($password));
         
         if ($return === true) {
             echo json_encode($return);
