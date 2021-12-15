@@ -27,7 +27,8 @@
                     <div class="card-text text-muted fw-lighter"><small>Last Updated at <?php echo $row['datetime']; ?></small></div>
                 </div>
                 <div class="col-2 m-auto">
-                    <div class="card-text pt-2"> <?php echo $row['item_quantity']; ?> unit(s) left.</div>
+                    <div class="card-text pt-2">Item ID: <?php echo $row['item_id']; ?> </div>
+                    <div class="card-text pt-2"><?php echo $row['item_quantity']; ?> unit(s) left.</div>
                 </div>
                 <div class="col-3 text-end m-auto">
                     <a href="<?php echo base_url(); ?>admin/foodbank/update/<?php echo $row['item_id']; ?>" class="btn btn-primary rounded-0">
